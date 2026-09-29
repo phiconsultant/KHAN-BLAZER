@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Khàn Blazer × CNVCDP — Chăm sóc khách hàng cá nhân hóa
+  </title>
+  <meta content="Đề xuất xây dựng thành viên, phân nhóm khách hàng và chăm sóc cá nhân hóa cho Khàn Blazer." name="description"/>
+  <style>
+   :root {
+  --ink:#111;
+  --muted:#6f6a64;
+  --cream:#f4efe8;
+  --sand:#d9c8b3;
+  --camel:#a9825f;
+  --paper:#fff;
+  --line:#e8e0d8;
+  --radius:28px;
+  --shadow:0 22px 70px rgba(50,40,30,.10);
+  --container:1180px;
+  --pad:clamp(20px,4vw,56px);
+  --sy:clamp(72px,9vw,126px)
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.65
+}
+img {
+  max-width:100%;
+  display:block
+}
+a {
+  text-decoration:none;
+  color:inherit
+}
+.container {
+  width:min(calc(100% - var(--pad)*2),var(--container));
+  margin:auto
+}
+.header {
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.06)
+}
+.head {
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+.brand img {
+  width:92px;
+  height:48px;
+  object-fit:contain
+}
+.nav {
+  display:flex;
+  gap:24px;
+  font-size:.86rem;
+  font-weight:700
+}
+.nav a:hover {
+  color:var(--camel)
+}
+.hero {
+  padding:14px var(--pad) 0
+}
+.hero-stage {
+  position:relative;
+  min-height:min(77vh,760px);
+  max-width:1500px;
+  margin:auto;
+  border-radius:34px;
+  overflow:hidden;
+  background:#d8cec2
+}
+.hero-stage>img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+.hero-stage:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(    90deg,
+    rgba(245, 239, 232, .98) 0%,
+    rgba(245, 239, 232, .94) 38%,
+    rgba(245, 239, 232, .55) 58%,
+    rgba(245, 239, 232, .08) 78%)
+}
+.hero-copy {
+  position:relative;
+  z-index:2;
+  min-height:min(77vh,760px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  max-width:960px;
+  padding:clamp(36px,7vw,90px)
+}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.73rem;
+  font-weight:800;
+  color:var(--camel)
+}
+h1,h2,h3 {
+  line-height:1.02;
+  letter-spacing:-.045em
+}
+h1 {
+  font-size:clamp(3.1rem,7vw,6.6rem);
+  margin:.15em 0 .22em;
+  font-weight:700
+}
+h2 {
+  font-size:clamp(2rem,4vw,3.5rem);
+  margin:.22em 0
+}
+h3 {
+  font-size:1.35rem;
+  margin:.5em 0
+}
+.lead {
+  font-size:clamp(1rem,1.4vw,1.22rem);
+  color:#504a44;
+  max-width:590px
+}
+.hero-note {
+  margin-top:26px;
+  display:inline-flex;
+  width:max-content;
+  padding:10px 14px;
+  border:1px solid rgba(0,0,0,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.52);
+  font-size:.86rem;
+  font-weight:700
+}
+.section {
+  padding:var(--sy) 0;
+  border-top:1px solid var(--line)
+}
+.intro {
+  max-width:1080px;
+  color:var(--muted);
+  font-size:1.06rem
+}
+.bigline {
+  margin-top:46px;
+  padding:clamp(30px,5vw,62px);
+  background:var(--ink);
+  color:white;
+  border-radius:var(--radius)
+}
+.bigline strong {
+  display:block;
+  font-size:clamp(1.8rem,4vw,3.8rem);
+  line-height:1.05;
+  letter-spacing:-.05em
+}
+.channel-proof {
+  margin-top:44px
+}
+.channel-proof-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:28px;
+  margin-bottom:22px
+}
+.channel-proof-head h3 {
+  font-size:clamp(1.45rem,2.5vw,2.25rem);
+  margin:0
+}
+.channel-proof-head p {
+  max-width:570px;
+  margin:0;
+  color:var(--muted)
+}
+.channel-gallery {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px
+}
+.channel-shot {
+  margin:0;
+  padding:9px;
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden
+}
+.channel-shot img {
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  object-position:top;
+  border-radius:13px
+}
+.channel-shot figcaption {
+  padding:10px 4px 2px;
+  font-size:.78rem;
+  font-weight:800;
+  text-align:center;
+  color:#62584f
+}
+.flow {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+  margin-top:42px
+}
+.step {
+  position:relative;
+  padding:26px 22px;
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-radius:22px;
+  min-height:180px
+}
+.step:not(:last-child):after {
+  content:"→";
+  position:absolute;
+  right:-12px;
+  top:50%;
+  z-index:2;
+  font-weight:900;
+  color:var(--camel)
+}
+.num {
+  font-size:.72rem;
+  letter-spacing:.12em;
+  font-weight:900;
+  color:var(--camel)
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:38px
+}
+.card {
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px
+}
+.card.feature {
+  background:var(--cream)
+}
+.tag {
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eee4d9;
+  color:#72583f;
+  font-size:.72rem;
+  font-weight:800
+}
+.split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(30px,6vw,80px);
+  align-items:center;
+  margin-top:46px
+}
+.phone {
+  max-width:390px;
+  margin:auto;
+  padding:14px;
+  background:#111;
+  border-radius:42px;
+  box-shadow:var(--shadow)
+}
+.screen {
+  min-height:640px;
+  background:#faf8f5;
+  border-radius:31px;
+  overflow:hidden;
+  padding:26px 20px
+}
+.screen-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.mini-logo {
+  width:78px;
+  height:42px;
+  object-fit:contain
+}
+.member {
+  margin:26px 0;
+  padding:22px;
+  border-radius:20px;
+  background:#e9ded1
+}
+.member b {
+  font-size:1.5rem
+}
+.product {
+  margin-top:16px;
+  padding:20px;
+  border-radius:18px;
+  background:white;
+  border:1px solid var(--line)
+}
+.price {
+  font-size:1.35rem;
+  font-weight:850
+}
+.member-price {
+  color:#8b6748
+}
+.message-list {
+  display:grid;
+  gap:14px;
+  margin-top:30px
+}
+.message {
+  padding:20px 22px;
+  border-radius:18px;
+  background:var(--cream);
+  border:1px solid var(--line)
+}
+.message small {
+  display:block;
+  color:var(--camel);
+  font-weight:800;
+  margin-bottom:5px
+}
+.arch {
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:16px;
+  align-items:center
+}
+.arch-box {
+  padding:28px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  text-align:center;
+  background:#fff
+}
+.arch-box img {
+  height:70px;
+  max-width:150px;
+  object-fit:contain;
+  margin:0 auto 12px
+}
+.arrow {
+  font-size:2rem;
+  color:var(--camel)
+}
+.closing {
+  background:var(--cream)
+}
+.closing-box {
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:40px;
+  align-items:end
+}
+.pill {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 18px;
+  border-radius:999px;
+  background:#111;
+  color:#fff;
+  font-weight:800
+}
+.footer {
+  padding:55px var(--pad);
+  background:#111;
+  color:#fff;
+  text-align:center
+}
+.footer img {
+  width:88px;
+  height:48px;
+  object-fit:contain;
+  filter:invert(1);
+  margin:0 auto 18px
+}
+.footer p {
+  color:#aaa;
+  margin:5px 0
+}
+.visual-block {
+  margin-top:38px
+}
+.visual-block img {
+  width:100%;
+  border-radius:24px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+.visual-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:38px
+}
+.visual-grid figure {
+  margin:0
+}
+.visual-grid img {
+  width:100%;
+  border-radius:24px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+.visual-caption {
+  margin:12px 4px 0;
+  color:var(--muted);
+  font-size:.9rem
+}
+.visual-square {
+  max-width:760px;
+  margin:38px auto 0
+}
+.visual-square img {
+  width:100%;
+  border-radius:28px;
+  box-shadow:var(--shadow)
+}
+.social-to-miniapp {
+  display:grid;
+  grid-template-columns:minmax(320px,.85fr) 1.15fr;
+  gap:clamp(28px,5vw,64px);
+  align-items:center;
+  margin-top:46px;
+  padding:clamp(22px,3vw,36px);
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-radius:28px
+}
+.social-to-miniapp figure {
+  margin:0
+}
+.social-to-miniapp img {
+  width:100%;
+  border-radius:22px;
+  box-shadow:var(--shadow)
+}
+.social-to-miniapp h3 {
+  font-size:clamp(1.65rem,3vw,2.7rem);
+  margin:.25em 0 .5em
+}
+.social-to-miniapp p {
+  color:var(--muted)
+}
+.social-to-miniapp .mini-flow {
+  margin-top:18px;
+  padding:18px 20px;
+  border-left:3px solid var(--camel);
+  background:rgba(255,255,255,.62);
+  border-radius:0 16px 16px 0;
+  font-weight:700;
+  color:#4d433a
+}
+.miniapp-interface {
+  margin-top:58px
+}
+.miniapp-interface-head {
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:22px
+}
+.miniapp-interface-head h3 {
+  font-size:clamp(1.6rem,3vw,2.6rem);
+  margin:0;
+  max-width:620px
+}
+.miniapp-interface-head p {
+  max-width:480px;
+  margin:0;
+  color:var(--muted)
+}
+.miniapp-interface figure {
+  margin:0
+}
+.miniapp-interface img {
+  width:100%;
+  border-radius:24px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+@media(max-width:900px) {
+  .social-to-miniapp {
+    grid-template-columns:1fr
+  }
+  .social-to-miniapp figure {
+    max-width:650px;
+    margin:auto
+  }
+  .miniapp-interface-head {
+    align-items:start;
+    flex-direction:column
+  }
+  .nav {
+    display:none
+  }
+  .channel-gallery {
+    grid-template-columns:repeat(3,1fr)
+  }
+  .channel-proof-head {
+    align-items:start;
+    flex-direction:column
+  }
+  .flow,.cards {
+    grid-template-columns:1fr 1fr
+  }
+  .split,.closing-box {
+    grid-template-columns:1fr
+  }
+  .arch {
+    grid-template-columns:1fr
+  }
+  .arrow {
+    transform:rotate(90deg);
+    text-align:center
+  }
+  .hero-stage:after {
+    background:linear-gradient(90deg,rgba(245,239,232,.95),rgba(245,239,232,.62))
+  }
+}
+@media(max-width:620px) {
+  .channel-gallery {
+    grid-template-columns:repeat(2,1fr)
+  }
+  .channel-shot:last-child {
+    grid-column:1/-1;
+    max-width:50%;
+    justify-self:center
+  }
+  .hero {
+    padding:8px
+  }
+  .hero-stage {
+    border-radius:24px;
+    min-height:74vh
+  }
+  .hero-stage>img {
+    object-position:63% center
+  }
+  .hero-copy {
+    min-height:74vh;
+    padding:30px 22px;
+    justify-content:flex-end
+  }
+  .flow,.cards {
+    grid-template-columns:1fr
+  }
+  .step:not(:last-child):after {
+    content:"↓";
+    right:auto;
+    left:50%;
+    top:auto;
+    bottom:-18px
+  }
+  .screen {
+    min-height:560px
+  }
+  .header {
+    position:relative
+  }
+}
+.pricing-wrap {
+  margin-top:44px
+}
+.pricing-table {
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff
+}
+.pricing-table th {
+  padding:16px 18px;
+  background:var(--cream);
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  text-align:left;
+  color:#72583f
+}
+.pricing-table td {
+  padding:20px 18px;
+  border-top:1px solid var(--line);
+  vertical-align:top
+}
+.pricing-table td:nth-child(3),.pricing-table td:nth-child(4),.pricing-table th:nth-child(3),.pricing-table th:nth-child(4) {
+  text-align:right;
+  white-space:nowrap
+}
+.pricing-table strong {
+  display:block;
+  margin-bottom:4px
+}
+.pricing-table small {
+  color:var(--muted);
+  line-height:1.5
+}
+.investment-summary {
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:18px;
+  margin-top:18px
+}
+.investment-main,.investment-renew {
+  border-radius:24px;
+  padding:30px
+}
+.investment-main {
+  background:var(--ink);
+  color:#fff
+}
+.investment-renew {
+  background:var(--cream);
+  border:1px solid var(--line)
+}
+.investment-label {
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+  color:var(--camel)
+}
+.investment-main .investment-label {
+  color:#d7b18c
+}
+.investment-price {
+  font-size:clamp(2.2rem,5vw,4.3rem);
+  font-weight:800;
+  letter-spacing:-.055em;
+  line-height:1;
+  margin:10px 0
+}
+.investment-old {
+  color:#b9b3ad;
+  text-decoration:line-through
+}
+.gift-box {
+  margin-top:34px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff
+}
+.gift-head {
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:end;
+  margin-bottom:20px
+}
+.gift-value {
+  font-size:1.65rem;
+  font-weight:850;
+  color:#72583f;
+  white-space:nowrap
+}
+.gift-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px
+}
+.gift-item {
+  padding:20px;
+  border-radius:18px;
+  background:var(--cream)
+}
+.gift-item b {
+  display:block;
+  margin-bottom:6px
+}
+.gift-item p {
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem
+}
+.pricing-notes {
+  margin-top:22px;
+  padding:22px 26px;
+  border-left:3px solid var(--camel);
+  background:#faf7f3;
+  border-radius:0 18px 18px 0
+}
+.pricing-notes p {
+  margin:5px 0;
+  color:var(--muted);
+  font-size:.92rem
+}
+@media(max-width:760px) {
+  .pricing-table {
+    display:block;
+    overflow-x:auto
+  }
+  .investment-summary {
+    grid-template-columns:1fr
+  }
+  .gift-head {
+    align-items:start;
+    flex-direction:column
+  }
+  .gift-grid {
+    grid-template-columns:1fr
+  }
+  .pricing-table th,.pricing-table td {
+    min-width:150px
+  }
+  .pricing-table th:nth-child(2),.pricing-table td:nth-child(2) {
+    min-width:280px
+  }
+}
+  </style>
+ </head>
+ <body>
+  <header class="header">
+   <div class="container head">
+    <a class="brand" href="#top">
+     <img alt="Khàn" src="assets/khan-logo.png"/>
+    </a>
+    <nav class="nav">
+     <a href="#co-hoi">
+      Cơ hội
+     </a>
+     <a href="#hanh-trinh">
+      Hành trình
+     </a>
+     <a href="#thanh-vien">
+      Thành viên
+     </a>
+     <a href="#phan-nhom">
+      Phân nhóm
+     </a>
+     <a href="#ha-tang">
+      Hạ tầng
+     </a>
+     <a href="#ngan-sach">
+      Ngân sách
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="top">
+   <section class="hero">
+    <div class="hero-stage">
+     <img alt="Bộ sưu tập Khàn Blazer" src="assets/khan-hero.png"/>
+     <div class="hero-copy">
+      <span class="eyebrow">
+       Khàn Blazer × CNVCDP
+      </span>
+      <h1>
+       GIẢI PHÁP CHĂM SÓC KHÁCH HÀNG THÂN THIẾT
+      </h1>
+      <p class="lead">
+       Xây dựng hành trình từ NGƯỜI MUA HÀNG thành KHÁCH HÀNG THÂN THIẾT của Khàn, Phân nhóm theo hành vi và Gửi tin nhắn chăm sóc phù hợp với từng nhóm khách hàng.
+      </p>
+      <div class="hero-note">
+       Thành viên · Phân nhóm · Chăm sóc cá nhân hóa
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="co-hoi">
+    <div class="container">
+     <span class="eyebrow">
+      01 — Cơ hội
+     </span>
+     <h2>
+      BỘ TÀI SẢN SỐ KHÀN ĐANG SỞ HỮU
+     </h2>
+     <p class="intro">
+      Từ Facebook, Instagram, TikTok, Shopee đến trang Web riêng, Khàn Blazer đã tạo được nhiều điểm chạm để khách hàng biết đến, theo dõi và mua sắm. Đây là nền tảng quan trọng để bước tiếp theo không chỉ là tiếp tục tìm khách mới, mà còn giữ kết nối với những người đã mua hàng.
+     </p>
+     <div class="channel-proof">
+      <div class="channel-proof-head">
+       <h3>
+        Những điểm chạm Khàn đang sở hữu
+       </h3>
+       <p>
+        Ghi nhận hệ thống kênh Khàn đã xây dựng trước khi đề xuất hành trình thành viên và chăm sóc khách hàng.
+       </p>
+      </div>
+      <div class="channel-gallery">
+       <figure class="channel-shot">
+        <img alt="Kênh TikTok của Khàn Blazer" loading="lazy" src="assets/khan-channel-1.webp"/>
+        <figcaption>
+         TikTok
+        </figcaption>
+       </figure>
+       <figure class="channel-shot">
+        <img alt="Gian hàng Shopee của Khàn Blazer" loading="lazy" src="assets/khan-channel-2.webp"/>
+        <figcaption>
+         Shopee
+        </figcaption>
+       </figure>
+       <figure class="channel-shot">
+        <img alt="Kênh Instagram của Khàn Blazer" loading="lazy" src="assets/khan-channel-3.webp"/>
+        <figcaption>
+         Instagram
+        </figcaption>
+       </figure>
+       <figure class="channel-shot">
+        <img alt="Trang Facebook của Khàn Blazer" loading="lazy" src="assets/khan-channel-4.webp"/>
+        <figcaption>
+         Facebook
+        </figcaption>
+       </figure>
+       <figure class="channel-shot">
+        <img alt="Trang web của Khàn Blazer" loading="lazy" src="assets/khan-channel-5.webp"/>
+        <figcaption>
+         Trang web
+        </figcaption>
+       </figure>
+      </div>
+     </div>
+     <div class="bigline">
+      <span class="eyebrow">
+       Bước tiếp theo
+      </span>
+      <strong>
+       Biến Khách Hàng Đa Kênh Thành Thành Viên Thân Thiến Của Khàn Blazer
+      </strong>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="hanh-trinh">
+    <div class="container">
+     <span class="eyebrow">
+      02 — Hành trình đề xuất
+     </span>
+     <h2>
+      Mã QR Trên Hộp Hàng Mở Ra Hành Trình Thành Viên Thân Thiết
+     </h2>
+     <p class="intro">
+      Không cần tạo thêm thao tác phức tạp. Điểm bắt đầu là chính khoảnh khắc khách nhận sản phẩm của Khàn.
+     </p>
+     <div class="flow">
+      <article class="step">
+       <span class="num">
+        01
+       </span>
+       <h3>
+        Mua hàng
+       </h3>
+       <p>
+        Khách đặt hàng từ các kênh hiện tại của Khàn.
+       </p>
+      </article>
+      <article class="step">
+       <span class="num">
+        02
+       </span>
+       <h3>
+        Nhận hộp Khàn
+       </h3>
+       <p>
+        Mã QR được đặt trên bao bì hoặc thẻ cảm ơn.
+       </p>
+      </article>
+      <article class="step">
+       <span class="num">
+        03
+       </span>
+       <h3>
+        Quét mã QR
+       </h3>
+       <p>
+        Khách được dẫn vào Mini App của Khàn.
+       </p>
+      </article>
+      <article class="step">
+       <span class="num">
+        04
+       </span>
+       <h3>
+        Kích hoạt thành viên
+       </h3>
+       <p>
+        Khàn bắt đầu nhận diện và chăm sóc khách hàng.
+       </p>
+      </article>
+      <article class="step">
+       <span class="num">
+        05
+       </span>
+       <h3>
+        Quay lại mua sắm
+       </h3>
+       <p>
+        Khách nhận quyền lợi và ưu đãi dành riêng cho thành viên.
+       </p>
+      </article>
+     </div>
+     <div class="visual-block">
+      <img alt="Minh họa hành trình quét QR trên hộp hàng, kích hoạt thành viên và mua hàng trên Mini App" loading="lazy" src="assets/qr-member-journey.webp"/>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="thanh-vien">
+    <div class="container">
+     <span class="eyebrow">
+      03 — Mini App & thành viên
+     </span>
+     <h2>
+      Kênh Mua Sắm và Nhận Quyền Lợi Thành Viên Dành Riêng Cho Khách Hàng Của Khàn Blazer
+     </h2>
+     <p class="intro">
+      Zalo Mini App không chỉ là nơi xem hạng thành viên. Đây có thể trở thành kênh mua sắm trực tiếp với những quyền lợi riêng, giúp Khàn chủ động hơn trong mối quan hệ với khách hàng và giảm phụ thuộc vào các kênh trung gian.
+     </p>
+     <div class="cards">
+      <article class="card feature">
+       <span class="tag">
+        Quyền lợi
+       </span>
+       <h3>
+        Ưu Đãi Hạng Thành Viên
+       </h3>
+       <p>
+        Thiết kế ưu đãi riêng khi khách mua trực tiếp trên Zalo Mini App.
+       </p>
+      </article>
+      <article class="card">
+       <span class="tag">
+        Gắn kết
+       </span>
+       <h3>
+        Hạng thành viên
+       </h3>
+       <p>
+        Tích lũy giá trị mua sắm và mở khóa quyền lợi theo từng hạng.
+       </p>
+      </article>
+      <article class="card">
+       <span class="tag">
+        Mua sắm
+       </span>
+       <h3>
+        Kênh trực tiếp của Khàn
+       </h3>
+       <p>
+        Khách xem sản phẩm, lưu yêu thích, mua hàng và sử dụng ưu đãi ngay trên Zalo Mini App.
+       </p>
+      </article>
+      <article class="card">
+       <span class="tag">
+        Dữ liệu
+       </span>
+       <h3>
+        Hiểu khách rõ hơn
+       </h3>
+       <p>
+        Hành vi thành viên tạo thêm dữ liệu phục vụ phân nhóm và chăm sóc.
+       </p>
+      </article>
+     </div>
+     <div class="social-to-miniapp">
+      <figure>
+       <img alt="Gợi ý bài đăng từ Facebook Fanpage Khàn dẫn khách hàng sang Zalo Mini App" loading="lazy" src="assets/miniapp-poster.webp"/>
+       <figcaption class="visual-caption">
+        Gợi ý hình ảnh truyền thông trên Facebook Fanpage để giới thiệu Mini App Khàn.
+       </figcaption>
+      </figure>
+      <div>
+       <span class="eyebrow">
+        Từ người theo dõi thành thành viên
+       </span>
+       <h3>
+        Hướng dẫn 103K Follower từ Fanpage hiện có về Mini App 
+       </h3>
+       <p>
+        Khàn đã có cộng đồng người theo dõi trên Facebook. Thay vì chỉ dùng Fanpage để giới thiệu sản phẩm, Khàn có thể định kỳ đăng nội dung mời khách truy cập Mini App với một lý do đủ rõ ràng: Xem & Mua sắm sản phẩm, Nhận ưu đãi thành viên, Cập nhật liên tục thông tin của Khàn trực tiếp trên một ứng dụng ZALO.
+       </p>
+       <p>
+        Mỗi bài đăng có thể gắn mã QR hoặc đường dẫn truy cập Mini App. Khi khách đi từ nội dung trên Fanpage sang Mini App và kích hoạt thành viên, Khàn có thêm một điểm chạm trực tiếp để tiếp tục chăm sóc sau lần tương tác đầu tiên.
+       </p>
+       <div class="mini-flow">
+        Facebook Fanpage → Nội dung kêu gọi tham gia → QR / đường dẫn → Zalo Mini App → Kích hoạt thành viên
+       </div>
+      </div>
+     </div>
+     <div class="miniapp-interface">
+      <div class="miniapp-interface-head">
+       <h3>
+        Giao diện Zalo Mini App dành cho khách hàng Khàn Blazer
+       </h3>
+       <p>
+        Sau khi truy cập, khách có thể xem bộ sưu tập, chi tiết sản phẩm, mua hàng, theo dõi điểm, hạng thành viên và các quyền lợi dành riêng trong cùng một trải nghiệm.
+       </p>
+      </div>
+      <figure>
+       <img alt="Các màn hình mua sắm, sản phẩm và hạng thành viên trên Zalo Mini App Khàn" loading="lazy" src="assets/miniapp-screens.webp"/>
+       <figcaption class="visual-caption">
+        Từ xem sản phẩm đến theo dõi điểm, hạng và quyền lợi thành viên trên Zalo Mini App.
+       </figcaption>
+      </figure>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="phan-nhom">
+    <div class="container">
+     <span class="eyebrow">
+      04 — Phân nhóm & chăm sóc cá nhân hóa
+     </span>
+     <h2>
+      Thông Điệp Cá Nhân Hóa Cho Từng Khách Hàng của Khàn Blazer
+     </h2>
+     <p class="intro">
+      Từ dữ liệu khách hàng, lịch sử mua sắm, điểm, voucher và hành vi tương tác có thể đồng bộ, CNVCDP giúp Khàn tạo các nhóm có ý nghĩa để gửi nội dung phù hợp hơn.
+     </p>
+     <div class="visual-block">
+      <img alt="Năm nhóm khách hàng nhận thông điệp dựa trên điểm, voucher và hành vi quay lại" loading="lazy" src="assets/segment-5-groups.webp"/>
+     </div>
+     <div class="visual-block">
+      <img alt="Minh họa các tin nhắn chăm sóc cá nhân hóa của Khàn Blazer" loading="lazy" src="assets/personalized-messages.webp"/>
+     </div>
+     <div class="bigline">
+      <span class="eyebrow">
+       Mục tiêu
+      </span>
+      <strong>
+       Đúng Nhóm Khách Hàng · Đúng Thời Điểm · Đúng Lý Do để Quay Lại
+      </strong>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="hieu-gu">
+    <div class="container">
+     <span class="eyebrow">
+      05 — Hiểu gu khách hàng
+     </span>
+     <h2>
+      Hiểu Thêm Sở Thích Của Khách Hàng
+     </h2>
+     <p class="intro">
+      Một bài trắc nghiệm ngắn về phong cách, mục đích sử dụng và kiểu dáng yêu thích giúp bổ sung dữ liệu sở thích. Kết quả có thể dùng để gợi ý blazer phù hợp và hỗ trợ chăm sóc gần với nhu cầu của từng khách hơn.
+     </p>
+     <div class="visual-block">
+      <img alt="Hành trình trắc nghiệm phong cách blazer và kết quả gợi ý cá nhân hóa" loading="lazy" src="assets/style-quiz.webp"/>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="ha-tang">
+    <div class="container">
+     <span class="eyebrow">
+      06 — Hạ tầng đề xuất
+     </span>
+     <h2>
+      Hạ Tầng Vận Hành Cho Khàn Blazer
+     </h2>
+     <p class="intro">
+      Pancake tiếp tục đảm nhiệm vai trò hiện tại. Dữ liệu THÔNG TIN ĐƠN HÀNG - KHÁCH HÀNG - SẢN PHẨM được đồng bộ tự động sang CNVCDP để phục vụ Phân nhóm và Tự động hóa chăm sóc; Mini App là điểm chạm trực tiếp với thành viên.
+     </p>
+     <div class="arch">
+      <div class="arch-box">
+       <img alt="Pancake" src="assets/pancake-logo.jpg"/>
+       <b>
+        Hệ thống hiện tại
+       </b>
+       <p>
+        Quản lý hoạt động bán hàng và dữ liệu đang có.
+       </p>
+      </div>
+      <div class="arrow">
+       →
+      </div>
+      <div class="arch-box">
+       <img alt="CNVCDP" src="assets/cnv-logo.png"/>
+       <b>
+        CNVCDP
+       </b>
+       <p>
+        Hợp nhất dữ liệu cần thiết, phân nhóm và tự động hóa chăm sóc.
+       </p>
+      </div>
+      <div class="arrow">
+       →
+      </div>
+      <div class="arch-box">
+       <img alt="Khàn" src="assets/khan-logo.png"/>
+       <b>
+        Mini App Khàn
+       </b>
+       <p>
+        Thành viên, quyền lợi và kênh mua sắm trực tiếp.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="ngan-sach">
+    <div class="container">
+     <span class="eyebrow">
+      07 — Ngân sách đầu tư
+     </span>
+     <h2>
+      Ngân Sách Đầu Tư Hệ Thống CNVCDP
+     </h2>
+     <p class="intro">
+      Phương án gồm các hạng mục lõi cần thiết cho hành trình thành viên, mua sắm trên Zalo Mini App, phân nhóm dữ liệu và chăm sóc khách hàng tự động. Không có hạng mục tùy chọn.
+     </p>
+     <div class="pricing-wrap">
+      <table class="pricing-table">
+       <thead>
+        <tr>
+         <th>
+          Hạng mục
+         </th>
+         <th>
+          Phạm vi
+         </th>
+         <th>
+          Năm đầu
+         </th>
+         <th>
+          Gia hạn
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          <strong>
+           Loyalty & Ecom + Zalo Mini App
+          </strong>
+         </td>
+         <td>
+          <small>
+           Quản lý thành viên, tích điểm & phân hạng, ưu đãi, lịch sử đơn hàng, phân loại khách hàng; mua hàng, quản lý sản phẩm, bán hàng, vận chuyển và giao diện Zalo Mini App.
+          </small>
+         </td>
+         <td>
+          <strong>
+           10.800.000
+          </strong>
+         </td>
+         <td>
+          <strong>
+           5.400.000
+          </strong>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <strong>
+           CNVCDP Marketing Automation
+          </strong>
+         </td>
+         <td>
+          <small>
+           Webhook, phân nhóm khách hàng, thẻ khách hàng, chiến dịch tự động, gửi tin đa kênh, hồ sơ khách hàng, Segment, báo cáo và dung lượng hệ thống.
+          </small>
+         </td>
+         <td>
+          <strong>
+           24.000.000
+          </strong>
+         </td>
+         <td>
+          <strong>
+           24.000.000
+          </strong>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <strong>
+           Kết nối hệ thống bên thứ ba
+          </strong>
+         </td>
+         <td>
+          <small>
+           Kết nối POS/CRM, Open API CNV, cổng thanh toán, đơn vị vận chuyển và Zalo ZNS/UID theo phạm vi báo giá.
+          </small>
+         </td>
+         <td>
+          <strong>
+           8.400.000
+          </strong>
+         </td>
+         <td>
+          <strong>
+           8.400.000
+          </strong>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <strong>
+           Ứng dụng nhân viên Loyalty Hub
+          </strong>
+         </td>
+         <td>
+          <small>
+           Ứng dụng quản trị dành cho nhân viên; miễn phí 10 tài khoản trọn đời theo chính sách trong báo giá.
+          </small>
+         </td>
+         <td>
+          <strong>
+           10.000.000
+          </strong>
+         </td>
+         <td>
+          <strong>
+           0
+          </strong>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="investment-summary">
+       <div class="investment-main">
+        <div class="investment-label">
+         Tổng chi phí năm đầu sau ưu đãi
+        </div>
+        <div class="investment-price">
+         43.200.000 VNĐ
+        </div>
+        <div>
+         <span class="investment-old">
+          53.200.000 VNĐ
+         </span>
+         · Ưu đãi giảm 10.000.000 VNĐ
+        </div>
+       </div>
+       <div class="investment-renew">
+        <div class="investment-label">
+         Chi phí gia hạn
+        </div>
+        <div class="investment-price">
+         37.800.000 VNĐ
+        </div>
+        <div>
+         Chi phí duy trì từ năm tiếp theo theo phạm vi báo giá.
+        </div>
+       </div>
+      </div>
+      <div class="gift-box">
+       <div class="gift-head">
+        <div>
+         <span class="eyebrow">
+          Ưu đãi & quà tặng
+         </span>
+         <h3>
+          Tổng giá trị quyền lợi 22.390.000 VNĐ
+         </h3>
+        </div>
+        <div class="gift-value">
+         22.390.000 VNĐ
+        </div>
+       </div>
+       <div class="gift-grid">
+        <div class="gift-item">
+         <b>
+          Ứng dụng nhân viên Loyalty Hub
+         </b>
+         <p>
+          Giá trị 10.000.000 VNĐ; miễn phí 10 tài khoản trọn đời.
+         </p>
+        </div>
+        <div class="gift-item">
+         <b>
+          Giảm 50% phí gia hạn Mini App
+         </b>
+         <p>
+          Chi phí gia hạn Mini App từ năm thứ hai còn 5.400.000 VNĐ.
+         </p>
+        </div>
+        <div class="gift-item">
+         <b>
+          Đào tạo & đồng hành
+         </b>
+         <p>
+          Tặng khóa Zalo Mastery chuyên sâu trị giá 1.990.000 VNĐ và gói CNV Training cơ bản trị giá 5.000.000 VNĐ.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="pricing-notes">
+       <strong>
+        Lưu ý ngân sách
+       </strong>
+       <p>
+        Chi phí trên chưa bao gồm phí nâng cấp ZCA và phí gửi tin phải trả cho các nền tảng.
+       </p>
+       <p>
+        Phạm vi triển khai và chính sách áp dụng theo báo giá CNVCDP dành cho Khàn Blazer.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   
+  </main>
+  <footer class="footer">
+   <img alt="Khàn" src="assets/cnv-logo.png"/>
+   <p>
+TRÂN TRỌNG CẢM ƠN QUÝ KHÁCH
+   </p>
+   <p>
+Consultant - Nguyễn Phi - 094.3452.098
+   </p>
+  </footer>
+ </body>
+</html>
